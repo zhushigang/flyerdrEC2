@@ -85,3 +85,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/flyerdr/static'
+
+SQS_URL = "https://sqs.us-east-1.amazonaws.com/404997815393/FlyerDR-scraper-requests"
+
+LOGIN_URL = '/login/'
