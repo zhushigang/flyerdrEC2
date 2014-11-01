@@ -7,6 +7,9 @@ class RewardsProgram(models.Model):
   created_time = models.DateTimeField(auto_now_add=True, editable=False)
   updated_time = models.DateTimeField(auto_now_add=True, auto_now=True, editable=False)
 
+  def __unicode__(self):
+    return self.displayname
+
 class RewardsProgramAccount(models.Model):
   user = models.ForeignKey(User)
   rewards_program = models.ForeignKey(RewardsProgram)
