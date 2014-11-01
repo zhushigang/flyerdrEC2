@@ -17,6 +17,12 @@ def login(req):
       return redirect('main')
   return render(req, 'pointstracker/login.html', {})
 
+def signup(req):
+  return render(req, 'pointstracker/signup.html', {})
+
+def manage(req):
+  return render(req, 'pointstracker/manage.html', {})
+
 def about(req):
   return render(req, 'pointstracker/about.html', {})
 

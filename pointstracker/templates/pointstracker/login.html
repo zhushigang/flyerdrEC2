@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends 'pointstracker/base_template.html' %}
 
-    <title>FlyerDR Signin</title>
+{% load staticfiles %}
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+{% block title %}FlyerDR - Log In{% endblock %}
 
-    <!-- Custom styles for this template -->
-    <link href="/static/css/signin.css" rel="stylesheet">
+{% block head_extra %}
+<link href="{% static 'pointstracker/css/signin.css' %}" rel="stylesheet">
+{% endblock %}
 
-
-  <style type="text/css"></style></head>
-
-  <body>
-
+{% block body %}
     <div class="container">
 
 <!--      <div class="alert alert-danger" role="alert">Your username and password didn't match. Please try again.</div> -->
@@ -38,7 +27,4 @@
       </form>
 
     </div> <!-- /container -->
-
-  
-
-</body></html>
+{% endblock %}

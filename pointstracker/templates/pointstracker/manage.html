@@ -1,0 +1,81 @@
+{% extends 'pointstracker/base_template.html' %}
+
+{% load staticfiles %}
+
+{% block title%}FlyerDR - Manage{% endblock %}
+
+{% block head_extra %}
+    <link href="{% static 'pointstracker/css/dashboard.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block footer_js %}
+    <script src="{% static 'pointstracker/js/docs.min.js' %}"></script>
+    <script src="{% static 'pointstracker/js/tab.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'main' %}">FlyerDR</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'main' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+
+          <ul class="nav nav-sidebar"role="tablist" >
+            <li class="active" role="presentation">
+              <a href="#overview" role="tab" data-toggle="tab">Overview</a>
+            </li>
+            <li role="presentation">
+              <a href="#enterMembership" role="tab" data-toggle="tab">Link a membership</a>
+            </li>
+            <li role="presentation">
+              <a href="#accountManagement" role="tab" data-toggle="tab">Accunt management</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" >
+          
+          <!-- Nav tabs -->
+              <!-- <ul class="nav nav-tabs" role="tablist">
+
+                <li role="presentation" class="active">
+                  <a href="#home" role="tab" data-toggle="tab">Home</a>
+                </li>
+
+                <li role="presentation">
+                  <a href="#profile" role="tab" data-toggle="tab">Profile</a>
+                </li>
+
+                <li role="presentation">
+                  <a href="#messages" role="tab" data-toggle="tab">Messages</a>
+                </li>
+
+                <li role="presentation">
+                  <a href="#settings" role="tab" data-toggle="tab">Settings</a>
+                </li>
+              </ul> -->
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="overview">This is Overview of your account infomoration</div>
+                <div role="tabpanel" class="tab-pane" id="enterMembership">You Enter Membership Information</div>
+                <div role="tabpanel" class="tab-pane" id="accountManagement">This is Account Management</div>
+              </div>
+{% endblock %}

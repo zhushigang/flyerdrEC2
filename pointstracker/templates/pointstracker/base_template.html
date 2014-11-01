@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link href="{% static 'pointstracker/css/bootstrap.min.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     {% block head_extra %}
+     {% endblock %}
+     <title>{%block title%}FlyerDR{% endblock %}</title>
+  </head>
+  <body>
+    {% block body %}
+    {% endblock %}
+
+  <script src="{% static 'pointstracker/js/jquery.min.js' %}"></script>
+  <script src="{% static 'pointstracker/js/bootstrap.min.js' %}"></script>
+  {% block footer_js %}
+  {% endblock %}
+  </body>
+</html>
