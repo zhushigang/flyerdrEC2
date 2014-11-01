@@ -86,6 +86,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/ubuntu/flyerdr/static'
 
-SQS_URL = "https://sqs.us-east-1.amazonaws.com/404997815393/FlyerDR-scraper-requests"
 
 LOGIN_URL = '/login/'
+
+PT_SQS_REGION = "us-east-1"
+PT_QUEUE_NAME = "FlyerDR-scraper-requests"
+PT_AWS_ACCESS_KEY_ID="AKIAIAZFZFPNAV3QPD2Q"
+PT_AWS_SECRET_ACCESS_KEY="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"

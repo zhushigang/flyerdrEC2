@@ -25,20 +25,18 @@ class RewardsProgramAccount(models.Model):
 
   def current_balance(self):
     try:
-      return self.revisions.order_by('-revision')[0].get_current_balance()
+      return self.revisions.order_by('-updated_time')[0].get_current_balance()
     except IndexError:
       return None
-    
 
 class RewardsProgramAccountRevision(models.Model):
   account = models.ForeignKey(RewardsProgramAccount, related_name="revisions", related_query_name="revision")
   pending = models.BooleanField(default=False)
-  revision = models.PositiveIntegerField()
   created_time = models.DateTimeField(auto_now_add=True, editable=False)
   updated_time = models.DateTimeField(auto_now_add=True, auto_now=True, editable=False)
 
   def __unicode__(self):
-    return "{0} rev {1}".format(self.account, self.revision)
+    return "{0} rev {1}".format(self.account, self.id)
 
   def get_current_balance(self):
     if self.pending: return None

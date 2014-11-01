@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from django.contrib import auth
+from pointstracker import models
 
 def index(req):
   return render(req, 'pointstracker/index.html', {})
@@ -21,3 +22,4 @@ def about(req):
 
 def main(req):
   return render(req, 'pointstracker/main.html', {})
+
