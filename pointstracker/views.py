@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django import forms
 
 from django.contrib import auth
+from django.contrib.auth.models import User
 from pointstracker import models
 
 def index(req):
@@ -18,6 +20,19 @@ def login(req):
   return render(req, 'pointstracker/login.html', {})
 
 def signup(req):
+  if (req.method == "POST" and
+      all(x in req.POST and req.POST[x] != "" for x in
+      ("email", "password", "password2", "last", "first"))):
+    email = req.POST['email']
+    password1 = req.POST['password']
+    password2 = req.POST['password2']
+    if forms.EmailField().clean(email) and password1==password2:
+      new_user = User.objects.create_user(email, email, password1)
+      new_user.first_name = req.POST['first']
+      new_user.last_name = req.POST['last']
+      new_user.save()
+      return redirect('main')
+    last = req.POST['last']
   return render(req, 'pointstracker/signup.html', {})
 
 def manage(req):
