@@ -11,6 +11,8 @@ def index(req):
   return render(req, 'pointstracker/index.html', {})
 
 def login(req):
+  next_page = req.get['next'] 'next' in req.GET else 'main'
+  if req.user.is_authen
   if req.method == "POST":
     if "username" in req.POST and "password" in req.POST:
       uname = req.POST['username']

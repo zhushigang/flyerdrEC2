@@ -10,6 +10,7 @@
 
 {% block body %}
     <div class="container">
+    {% include 'pointstracker/messages.html' %}
       <form class="form-signin" role="form" method="post" action="{% url 'signup' %}">
         {% csrf_token %}
         <h2 class="form-signin-heading">Sign up</h2>
@@ -17,10 +18,15 @@
         <input type="password" class="form-control" placeholder="Password" required="" name="password">
         <input type="password" class="form-control" placeholder="Password (Repeat)" required="" name="password2">
 
+        <br>
+      
+       
 
         <input type="lastName" class="form-control" placeholder="Last Name" required="" name="last">
 
         <input type="First Name" class="form-control" placeholder="First Name" required="" name="first">
+
+        <br>
 
 <!--        <input type="Cell Phone" class="form-control" placeholder="Cell Phone" required="" name="cell"> -->
 

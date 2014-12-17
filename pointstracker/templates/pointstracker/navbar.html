@@ -9,11 +9,33 @@
               </button>
               <a class="navbar-brand" href="{% url 'main' %}">FlyerDR</a>
             </div>
-            <div class="navbar-collapse collapse">
+
+   <!--          <div class="navbar-collapse collapse">
+              Hackathon版本的div class navbar-collapse collapse
               <ul class="nav navbar-nav">
                 <li {% if page == 'main' %}class="active"{%endif%}><a href="{% url 'main' %}">Home</a></li>
-                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'about' %}">About</a></li>
-                <li {% if page == 'contact' %}class="active"{%endif%}><a href="#">Contact</a></li>
+                <li {% if page == 'main' %}class="active"{%endif%}><a href="{% url 'manage' %}">Manage</a></li>
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'about' %}">Help</a></li>
+              </ul>
+ -->
+
+
+
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+          
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'manage' %}">Link</a></li>
+
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'manage' %}">Overview</a></li>
+
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'about' %}">Profile</a></li>
+
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'about' %}">Setting</a></li>
+
+                <li {% if page == 'about' %}class="active"{%endif%}><a href="{% url 'about' %}">Help</a></li>
+
+
+
               </ul>
             </div>
           </div>

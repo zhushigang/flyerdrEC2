@@ -11,9 +11,11 @@
 {% block body %}
     <div class="container">
 
+        {% include 'pointstracker/messages.html' %}
+
 <!--      <div class="alert alert-danger" role="alert">Your username and password didn't match. Please try again.</div> -->
 
-      <form class="form-signin" role="form" method="post" action="{% url 'login' %}">
+      <form class="form-signin" role="form" method="post" action="">
         {% csrf_token %}
         <h2 class="form-signin-heading">Sign in</h2>
         <input type="username" class="form-control" placeholder="Username" required="" autofocus="" name="username">
