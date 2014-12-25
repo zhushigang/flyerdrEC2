@@ -40,7 +40,31 @@ def signup(req):
 
 @login_required
 def manage(req):
-  return render(req, 'pointstracker/manage.html', {})
+  accounts = list(models.RewardsProgramAccount.objects.filter(user=req.user))
+  revs = list()
+  for acc in accounts:
+    revs += [list(models.RewardsProgramAccountRevision.objects.filter(account = acc))]
+
+  last_entries = list()
+  for entries in revs:
+    last_entries += [models.RewardsProgramAccountRevisionEntry.objects.filter(revision=entries[-1])]
+  
+  programs = list(models.RewardsProgram.objects.all())
+  keys = list()
+  for program in programs:
+    keys += [program.shortname]
+  values = list()
+  for entry in last_entries:
+    values +=[entry[0].amount]
+  
+  json = dict()
+  for x in range(len(keys)):
+    if x<len(values):
+      json[keys[x]] = values[x]
+    else:
+      json[keys[x]] = "Please add your account"
+
+  return render(req, 'pointstracker/manage.html', json)
 
 def about(req):
   return render(req, 'pointstracker/about.html', {})
