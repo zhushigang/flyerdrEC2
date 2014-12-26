@@ -6,6 +6,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from pointstracker import models
+from pointstracker import queue
 
 def index(req):
   return render(req, 'pointstracker/index.html', {})
@@ -40,26 +41,27 @@ def signup(req):
 
 @login_required
 def manage(req):
-  me = req.method
-  po = req.POST
   if req.method=='GET':
     accounts = list(models.RewardsProgramAccount.objects.filter(user_id=20))
+    #for account in accounts: 
+    #  queue.refresh_rewards_balance(account)
     revs = list()
     for acc in accounts:
       revs += [list(models.RewardsProgramAccountRevision.objects.filter(account = acc))]
 
-    last_entries = list()
-    for entries in revs:
-      if len(entries)>0:
-        last_entries += [models.RewardsProgramAccountRevisionEntry.objects.filter(revision=entries[-1])]
+    last_rev = list()
+    for rev in revs:
+      if len(rev)>0:
+        last_rev += [models.RewardsProgramAccountRevisionEntry.objects.filter(revision=rev[-1])]
   
     programs = list(models.RewardsProgram.objects.all())
     keys = list()
     for program in programs:
       keys += [program.shortname]
     values = list()
-    for entry in last_entries:
-      values +=[entry[0].amount]
+    for entry in last_rev:
+      if len(entry)>0:
+        values +=[entry[0].amount]
   
     json = dict()
     for x in range(len(keys)):
@@ -71,6 +73,7 @@ def manage(req):
       shortname = acc.rewards_program.shortname
       json[shortname] = "Account information not yet updated"
     return render(req, 'pointstracker/manage.html', json)
+    
   elif req.method=='POST':
     if "id" in req.POST and "password" in req.POST:
       id = req.POST['id']
