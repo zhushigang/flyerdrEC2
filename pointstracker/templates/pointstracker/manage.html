@@ -124,8 +124,8 @@
             
                   <div  class="col-sm-8 jumbotron">
 
-                      <form class="form-horizontal" role="form">
-                      
+                      <form class="form-horizontal" role="form" method="post" action="">
+                        {% csrf_token %}
                         <div>
                             <h2>American Airline </h2>
                         </div>  
@@ -133,21 +133,22 @@
                       <div class="form-group">
                         <label for="inputMembershipID" class="col-sm-2 control-label">Membership ID</label>
                         <div class="col-sm-10">
-                          <input type="number" class="form-control" id="inputEmail3" placeholder="Membership ID number">
+						  <input type="hidden" name="shortname" value="aa">
+                          <input type="number" class="form-control" id="inputEmail3" name="id" placeholder="Membership ID number">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox"> Remember me
+                              <input type="checkbox" name="remeber"> Remember me
                             </label>
                           </div>
                         </div>
@@ -168,8 +169,8 @@
 
                   <div  class="col-sm-8 jumbotron">
 
-                      <form class="form-horizontal" role="form">
-                      
+                      <form class="form-horizontal" role="form" method="post" action="">
+                        {% csrf_token %}
                         <div>
                             <h2>Delta Airline </h2>
                         </div>  
@@ -177,21 +178,22 @@
                       <div class="form-group">
                         <label for="inputMembershipID" class="col-sm-2 control-label">Membership ID</label>
                         <div class="col-sm-10">
-                          <input type="number" class="form-control" id="inputEmail3" placeholder="Membership ID number">
+						  <input type="hidden" name="shortname" value="delta">
+                          <input type="number" class="form-control" id="inputEmail3" name="id" placeholder="Membership ID number">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox"> Remember me
+                              <input type="checkbox" name="remeber"> Remember me
                             </label>
                           </div>
                         </div>
@@ -213,8 +215,8 @@
 
                   <div  class="col-sm-8 jumbotron">
 
-                      <form class="form-horizontal" role="form">
-                      
+                      <form class="form-horizontal" role="form" method="post" action="">
+                        {% csrf_token %}
                         <div>
                             <h2>Jet Airline</h2>
                         </div>  
@@ -222,21 +224,22 @@
                       <div class="form-group">
                         <label for="inputMembershipID" class="col-sm-2 control-label">Membership ID</label>
                         <div class="col-sm-10">
-                          <input type="number" class="form-control" id="inputEmail3" placeholder="Membership ID number">
+						  <input type="hidden" name="shortname" value="jet">
+                          <input type="number" class="form-control" id="inputEmail3" name="id" placeholder="Membership ID number">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox"> Remember me
+                              <input type="checkbox" name="remeber"> Remember me
                             </label>
                           </div>
                         </div>
