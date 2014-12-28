@@ -55,6 +55,7 @@ def manage(req):
       value_pairs = {'cred1':id,'cred2':password}
       new_RewardsProgramAccount, created = models.RewardsProgramAccount.objects.update_or_create(user=req.user, rewards_program=program,defaults=value_pairs)
       new_RewardsProgramAccount.save()
+      queue.refresh_rewards_balance(new_RewardsProgramAccount)
     return redirect('manage')
 	
 	
