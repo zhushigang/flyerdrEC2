@@ -132,6 +132,27 @@
 
                               </form>
                           </div> 
+						  
+						  <div  class="col-sm-8 jumbotron">
+                                <form class="form-horizontal" role="form">
+                                  <div>
+                                      <h2>Asia Miles </h2>
+                                  </div>  
+
+                                  <p> Current Balance on your Account:</p>
+
+                                  <h1>
+                                      <div class="progress">
+                                          <div class="progress-bar" role="progressbar" aria-valuenow="{{jet}}" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                            {{asia}} points
+                                          </div>
+                                        </div>
+                                  </h1>  
+
+                                 
+
+                              </form>
+                          </div> 
 
                 </div>
 
@@ -321,7 +342,55 @@
                       </div>
                     </form>
                   </div>  
+				  
+				  <!-- for Asia -->
+				  <div  class="col-sm-8 jumbotron">
+
+                      <form class="form-horizontal" role="form" method="post" action="">
+                        {% csrf_token %}
+                        <div>
+                            <h2>Asia Miles </h2>
+                        </div>  
+
+                      <div class="form-group">
+                        <label for="inputMembershipID" class="col-sm-2 control-label">Membership ID</label>
+                        <div class="col-sm-10">
+						  <input type="hidden" name="shortname" value="asia">
+                          <input type="text" class="form-control" id="asia_membership" name="id" placeholder="Membership ID number">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="asia_password" name="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="hidden" name="remeber"> 
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Link it!</button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-10">
+                         
+                        </div>
+                      </div>
+                    </form>
+                  </div>  
+				  
                 </div>
+				
+				
+				
+				
 
 
 
