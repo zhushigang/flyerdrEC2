@@ -61,7 +61,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-           "read_default_file": "/home/ubuntu/sql-credentials.cnf",
+           "read_default_file": "/home/sql-credentials.cnf",
         },
     }
 }
@@ -84,7 +84,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/ubuntu/flyerdr/static'
+STATIC_ROOT = '/home/flyerdr/static'
 
 
 LOGIN_URL = '/login/'
@@ -93,3 +93,13 @@ PT_SQS_REGION = "us-east-1"
 PT_QUEUE_NAME = "FlyerDR-scraper-requests"
 PT_AWS_ACCESS_KEY_ID="AKIAIAZFZFPNAV3QPD2Q"
 PT_AWS_SECRET_ACCESS_KEY="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"
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'flyerdr@outlook.com'
+EMAIL_HOST_PASSWORD = 'DUANMU2088'
+ 
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
